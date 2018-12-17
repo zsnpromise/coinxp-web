@@ -11,6 +11,6 @@ export const actions = {
       BaseApi.getProductList()
     ]
     initData = await Promise.all(initData).catch(err => { console.log(err, 22) })
-    store.commit('auth/SET_VALUE', {rankList: initData[0].data, productList: JSON.parse(initData[1].data)})
+    initData && store.commit('auth/SET_VALUE', {rankList: initData[0].data, productList: JSON.parse(initData[1].data)})
   }
 }

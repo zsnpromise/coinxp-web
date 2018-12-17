@@ -40,12 +40,17 @@ export default {
   methods: {
     getUserInfo() {
       this.user.name && (this.userInfo.name = this.user.name)
-      let list = JSON.parse(this.rankList)
-      list.total.forEach(item => {
-        if (item.userNameChain === this.user.userNameChain) {
-          this.userInfo = item
-        }
-      })
+      let list = {
+        total: []
+      }
+      if (this.rankList) {
+        list = JSON.parse(this.rankList)
+        list.total.forEach(item => {
+          if (item.userNameChain === this.user.userNameChain) {
+            this.userInfo = item
+          }
+        })
+      }
     }
   },
   mounted() {

@@ -2,7 +2,7 @@ export const state = () => ({
   locale: 'zh-cn',
   user: {},
   asset: {},
-  rankList: [],
+  rankList: null,
   otherUser: {},
   getUserRecord: [],
   productList: []

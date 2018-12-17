@@ -1,13 +1,13 @@
 <template>
    <div class="ranking-list">
      <st-row class="nav">
-        <nuxt-link to="/ranking/?rank=1" :class="rank === 1 && 'active'">
+        <nuxt-link to="/game/ranking/?rank=1" :class="rank === 1 && 'active'">
           {{ $t('index.dayRank') }}
         </nuxt-link>
-        <nuxt-link to="/ranking/?rank=2" :class="rank === 2 && 'active'">
+        <nuxt-link to="/game/ranking/?rank=2" :class="rank === 2 && 'active'">
           {{ $t('index.weekRank') }}
         </nuxt-link>
-        <nuxt-link to="/ranking/?rank=3" :class="rank === 3 && 'active'">
+        <nuxt-link to="/game/ranking/?rank=3" :class="rank === 3 && 'active'">
           {{ $t('index.totalRank') }}
         </nuxt-link>
      </st-row>
@@ -22,7 +22,7 @@
      </div>
      <ul class="list">
        <li :key="index" v-for="(item, index) in getRankList()">
-        <nuxt-link :to="`/ranking/?rank=${rank || 1}&id=${index + 1}`" :class="id === (index + 1) && 'active'">
+        <nuxt-link :to="`/game/ranking/?rank=${rank || 1}&id=${index + 1}`" :class="id === (index + 1) && 'active'">
           <st-row class="item">
            <p>
              <template v-if="index === 0">
@@ -104,9 +104,14 @@ export default {
           this.assetKey = 'total_asset'
           break
       }
-      let list = JSON.parse(this.rankList)
-      this.$store.commit('auth/SET_VALUE', {otherUser: list[str][this.id - 1]} || {})
-      return list[str].sort((a, b) => b[this.assetKey] - a[this.assetKey])
+      let list = []
+      if (this.rankList) {
+        list = JSON.parse(this.rankList)
+        this.$store.commit('auth/SET_VALUE', {otherUser: list[str][this.id - 1]} || {})
+        list = list[str].sort((a, b) => b[this.assetKey] - a[this.assetKey])
+      }
+      console.log(list)
+      return list
     }
   }
 }
