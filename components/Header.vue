@@ -45,7 +45,8 @@ export default {
   data() {
     return {
       isShow: this.$route.path === '/ranking',
-      lang: {'zh-cn': '简体中文', 'en': 'English'}
+      lang: {'zh-cn': '简体中文', 'en': 'English'},
+      ApiConfig
     }
   },
   components: {
