@@ -24,6 +24,8 @@ using a prerelease version of Node (i.e. v7.6.0-rc.1) you will need to either:
   1. Use `npm install`
   2. Run `yarn` with a standard release of Node and then switch back
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
-# https://coinxp.github.io/cxpapi/index.html
+### 配置 ./config/api.config.js
+
+### 端口 3072
+
