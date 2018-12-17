@@ -116,7 +116,7 @@ export default {
           this.$alert('s', '提交成功！')
           setTimeout(() => {
             this.$router({
-              path: 'ranking'
+              path: '/game/ranking'
             })
           }, 2000)
         } else if (res.retCode === '10097') {
@@ -132,7 +132,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-@import url(../assets/css/theme.less);
+@import url(../../assets/css/theme.less);
 @media screen and (min-width:750px) and (max-width:1200px) {
   section {
     // width: 100%;
@@ -153,7 +153,7 @@ section {
         // font-weight: 700;
         color:  @mainFontColor;
         text-align: center;
-        background-image: url(../assets/img/bg.png);
+        background-image: url(../../assets/img/bg.png);
         background-position: center;
         background-repeat: no-repeat;
         &::before, &::after{
@@ -162,7 +162,7 @@ section {
           display: block;
           width: 2.1rem;
           height: 8px;
-          background-image: url(../assets/img/left.png);
+          background-image: url(../../assets/img/left.png);
           background-size: 2.1rem 100%; 
           top: 50%;
           margin-right: -4px;
@@ -177,7 +177,7 @@ section {
   // height: 640px;
   padding: 1.5rem 0 .4rem;
   // background-size: 100% 100%;
-  background-image: url(../assets/img/qiu.png);
+  background-image: url(../../assets/img/qiu.png);
   background-position: center -32px;
   background-repeat: no-repeat;
   text-align: center;
@@ -199,7 +199,7 @@ section {
 .content {
   padding-top: .4rem;
   background-color: #04052b;
-  background-image: url(../assets/img/bg2.png);
+  background-image: url(../../assets/img/bg2.png);
  h3 {
     width: 3.7rem;
     margin: 0 auto .6rem;

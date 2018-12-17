@@ -3,9 +3,10 @@
     <st-row class="header-content" justify="between" align="center">
       <!-- CoinXP -->
       <st-row class="header-left" align="center">
-        <p><a href="/">CoinXP</a></p>
+        <p><a :href="`${ApiConfig.main}/`">CoinXP</a></p>
       </st-row>
-      <div class="header-center" v-if="~$route.path.indexOf('ranking')">
+      <st-row align="center">
+        <div class="header-center" v-if="~$route.path.indexOf('ranking')">
           <i class="iconfont icon-zhankai" @click="isShow = true"></i>
           <div class="layer" v-if="isShow" @click="isShow = false"></div>
           <div class="user-left" v-if="isShow">
@@ -13,11 +14,11 @@
           </div>
         </div>
       <st-row class="header-right">
-        <div class="btn l active"><a href="/trade">Trade</a></div>
-        <div class="btn"><a href="/orders">My Orders</a></div>
-        <div class="btn"><a href="/wallet">My Wallets</a></div>
-        <div class="btn"><a href="http://tracker.coinxp.io" target="_blank">Block Expoler</a></div>
-        <div class="btn"><a href="/wallet">My Wallets</a></div>
+        <div class="btn l active"><a :href="`${ApiConfig.main}/trade`">Trade</a></div>
+        <div class="btn"><a :href="`${ApiConfig.main}/orders`" >My Orders</a></div>
+        <div class="btn"><a :href="`${ApiConfig.main}/wallet`" >My Wallets</a></div>
+        <div class="btn"><a  href="http://tracker.coinxp.io" target="_blank">Block Expoler</a></div>
+        <div class="btn"><a :href="`${ApiConfig.wallet}/`" >My Wallets</a></div>
         <div class="btn down">
           <a>{{ lang[locale] }}</a>
            <ul>
@@ -27,10 +28,11 @@
            </ul>
         </div>
         <div class="sign-in-btn btn">
-          <a class="ant-dropdown-link ant-dropdown-trigger" href="/">
+          <a class="ant-dropdown-link ant-dropdown-trigger" :href="`${ApiConfig.main}/`">
           {{ user.name }}<i class="anticon anticon-down"></i>
           </a>
         </div>
+      </st-row>
       </st-row>
       </st-row>
   </header>

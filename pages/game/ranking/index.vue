@@ -14,11 +14,11 @@
   </section>
 </template>
 <script>
-import userLeft from '../../components/index/user-left'
-import otherUser from '../../components/index/other-user'
-import otherUserAssert from '../../components/index/other-user-assert'
-import otherUserLine from '../../components/index/other-user-line'
-import otherUserRecord from '../../components/index/other-user-record'
+import userLeft from '../../../components/index/user-left'
+import otherUser from '../../../components/index/other-user'
+import otherUserAssert from '../../../components/index/other-user-assert'
+import otherUserLine from '../../../components/index/other-user-line'
+import otherUserRecord from '../../../components/index/other-user-record'
 export default {
   components: {
     userLeft,
@@ -41,8 +41,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url(../../components/common/font/iconfont.css);
-@import url(../../assets/css/theme.less);
+@import url(../../../components/common/font/iconfont.css);
+@import url(../../../assets/css/theme.less);
 .container {
   width: 100%;
   margin: 0 auto;
