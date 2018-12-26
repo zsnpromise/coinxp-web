@@ -13,7 +13,10 @@ $ npm run dev
 
 # build for production and launch server
 $ npm run build
-$ npm start
+$ npm install -g pm2 （下载pm2）
+$ pm2 start pm2.json （启动程序）
+$ pm2 restart all (更新)
+$ pm2 stop all (停止)
 
 # generate static project
 $ npm run generate
@@ -28,4 +31,6 @@ using a prerelease version of Node (i.e. v7.6.0-rc.1) you will need to either:
 ### 配置 ./config/api.config.js
 
 ### 端口 3072
+
+ 
 
